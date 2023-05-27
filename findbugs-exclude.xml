@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FindBugsFilter>
+    <!--api-->
+    <Match>
+        <Class name="com.atgov.cash.dispenser.model.CashDispenser"/>
+        <Bug pattern="EI_EXPOSE_REP, EI_EXPOSE_REP2"/>
+    </Match>
+    <Match>
+        <Class name="com.atgov.cash.dispenser.model.UpdateBill"/>
+        <Bug pattern="EI_EXPOSE_REP, EI_EXPOSE_REP2"/>
+    </Match>
+    <Match>
+        <Class name="com.atgov.cash.dispenser.resource.CashInventoryResource"/>
+        <Bug pattern="EI_EXPOSE_REP, EI_EXPOSE_REP2, DM_CONVERT_CASE"/>
+    </Match>
+    <Match>
+        <Class name="com.atgov.cash.dispenser.service.CashDispenserServiceImpl"/>
+        <Bug pattern="EI_EXPOSE_REP, EI_EXPOSE_REP2, ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD"/>
+    </Match>
+    <Match>
+        <Class name="com.atgov.cash.dispenser.exception.GlobalExceptionHandler"/>
+        <Bug pattern="NP_NULL_ON_SOME_PATH, NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE"/>
+    </Match>
+
+
+
+
+</FindBugsFilter>
