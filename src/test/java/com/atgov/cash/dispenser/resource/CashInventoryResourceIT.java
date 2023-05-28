@@ -256,7 +256,7 @@ public class CashInventoryResourceIT {
         ResponseEntity<String> responseEntity = template.exchange(
                 GENERIC_CASH_INVENTORY_TRANSACTIONS_URL, HttpMethod.POST, httpEntity, String.class);
         String expectedResponse =
-                "{\"errors\":[\"Invalid amount: transaction amount should be greater than or equal to 20\"]}";
+                "{\"errors\":[\"Invalid amount: Transaction amount should be greater than or equal to 20\"]}";
 
         assertTrue(responseEntity.getStatusCode().is4xxClientError());
         JSONAssert.assertEquals(expectedResponse, responseEntity.getBody(), true);

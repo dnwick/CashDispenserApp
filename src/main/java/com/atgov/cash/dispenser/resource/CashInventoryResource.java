@@ -3,7 +3,7 @@ package com.atgov.cash.dispenser.resource;
 import com.atgov.cash.dispenser.exception.CashDispenserValidationException;
 import com.atgov.cash.dispenser.model.CashDispenser;
 import com.atgov.cash.dispenser.model.Currency;
-import com.atgov.cash.dispenser.model.TransactionReq;
+import com.atgov.cash.dispenser.model.TransactionRequest;
 import com.atgov.cash.dispenser.model.UpdateBill;
 import com.atgov.cash.dispenser.service.CashDispenserService;
 import com.atgov.cash.dispenser.service.CashDispenserServiceImpl;
@@ -69,8 +69,9 @@ public class CashInventoryResource {
     }
 
     @RequestMapping(value = "/v1/cash-inventory/transactions", method = RequestMethod.POST)
-    public Map<Currency, Integer> doTransactions(@Valid @RequestBody TransactionReq transactionReq)
+    public Map<Currency, Integer> doTransactions(@Valid @RequestBody TransactionRequest transactionReq)
             throws CashDispenserValidationException {
+        //todo Fix amount can be provided with decimal places. Now it will be rounded up as we are using int
         return service.dispenseBills(transactionReq.getAmount());
     }
 }
